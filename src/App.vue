@@ -1,6 +1,6 @@
 <template>
-  <LoginComponent v-if="loggedIn" v-bind=loginData  v-on:login="login($event)"/>
-  <MainComponent v-else-if="!loggedIn"/>
+  <LoginComponent v-if="!loggedIn" v-bind=loginData  v-on:login="login($event)"/>
+  <MainComponent v-else-if="loggedIn"/>
 </template>
 
 <script>

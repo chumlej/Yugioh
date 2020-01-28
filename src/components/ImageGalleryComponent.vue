@@ -20,9 +20,9 @@
                 >
                     <div class="display-3" style="height: 10%">{{ card.name }}</div>
                 </v-row>
-                <ImageCardComponent style="position: absolute; left: 5em"></ImageCardComponent>
-                <PriceGraphCardComponent style="position: absolute; right: 5em; direction: rtl"></PriceGraphCardComponent>
-                <CardDetailsCardComponent style="position: absolute; right: 5em; top: 36em"></CardDetailsCardComponent>
+                <ImageCardComponent style="position: absolute; left: 5em" :image="card.image"></ImageCardComponent>
+                <PriceGraphCardComponent style="position: absolute; right: 5em; direction: rtl" :pricetrend="card.preistrend"></PriceGraphCardComponent>
+                <CardDetailsCardComponent style="position: absolute; right: 5em; top: 36em" :price="card.price"></CardDetailsCardComponent>
             </v-sheet>
         </v-carousel-item>
     </v-carousel>
@@ -37,41 +37,12 @@ import CardDetailsCardComponent from "./CardDetailsCardComponent";
 export default {
     name: "ImageGalleryComponent",
     components: {CardDetailsCardComponent, PriceGraphCardComponent, ImageCardComponent},
+    props: {
+        cards: Object
+    },
     data() {
         return {
             color: '#cccccc',
-            cards: [
-                {
-                    name: 'Auszubildende Illusionsmagierin ',
-                    image: '../assets/No_image.png',
-                    preis: '1,00',
-                    preistrend: ''
-                },
-                {
-                    name: 'Seelen der Magier',
-                    image: '../assets/No_image.png',
-                    preis: '73,50',
-                    preistrend: ''
-                },
-                {
-                    name: 'Elementar-HELD Sunrise',
-                    image: '../assets/No_image.png',
-                    preis: '5,90',
-                    preistrend: ''
-                },
-                {
-                    name: 'Ignition Assault Display ',
-                    image: '../assets/No_image.png',
-                    preis: '49,64',
-                    preistrend: ''
-                },
-                {
-                    name: 'Seelendiener',
-                    image: '../assets/No_image.png',
-                    preis: '5,00',
-                    preistrend: ''
-                }
-            ]
         }
     }
 }

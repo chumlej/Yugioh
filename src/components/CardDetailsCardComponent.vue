@@ -10,7 +10,7 @@
                 Karte verfügbar ab:
             </p>
             <div class="text--primary" style="font-size: 7em;padding-top: 4.5%;">
-                XX.XX €
+                {{price}}€
             </div>
         </v-card-text>
     </v-card>
@@ -18,7 +18,10 @@
 
 <script>
     export default {
-        name: "CardDetailsCardComponent"
+        name: "CardDetailsCardComponent",
+        props: {
+            price: String
+        }
     }
 </script>
 

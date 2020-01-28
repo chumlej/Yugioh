@@ -39,7 +39,7 @@
                     fluid
             >
                 <AddCardComponent :isDialogOpen="addCardDialogOpen" v-on:dialogClosed="addCardDialogOpen = false"></AddCardComponent>
-                <ImageGalleryComponent></ImageGalleryComponent>
+                <ImageGalleryComponent :cards="cards"></ImageGalleryComponent>
                 <v-btn class="mx-2" fab dark color="indigo" absolute="true" right="true" style="bottom: 2em"
                  @click="addCardDialogOpen = true">
                     <v-icon dark>mdi-plus</v-icon>
@@ -70,6 +70,38 @@ export default {
     data: () => ({
         drawer: null,
         addCardDialogOpen: false,
+        cards: [
+            {
+                name: 'Auszubildende Illusionsmagierin ',
+                image: require('../assets/Auszubildende Illusionsmagierin.jpg'),
+                price: '1,00',
+                preistrend: require('../assets/Auszubildende Illusionsmagierin Pricegraph.jpg')
+            },
+            {
+                name: 'Seelen der Magier',
+                image: require('../assets/Seelen der Magier.jpg'),
+                price: '73,50',
+                preistrend: require('../assets/Seelen der Magier Trend.jpg')
+            },
+            {
+                name: 'Elementar-HELD Sunrise',
+                image: require('../assets/Elementar-HELD Sunrise.jpg'),
+                price: '5,90',
+                preistrend: require('../assets/Elementar-HELD Sunrise Trend.jpg')
+            },
+            {
+                name: 'Ignition Assault Display ',
+                image: require('../assets/Ignition Assault Display.jpg'),
+                price: '49,64',
+                preistrend: require('../assets/Ignition Assault Trend.jpg')
+            },
+            {
+                name: 'Seelendiener',
+                image: require('../assets/Seelendiener.jpg'),
+                price: '5,00',
+                preistrend:require('../assets/Seelendiener Trend.jpg')
+            }
+        ]
     }),
     created () {
         this.$vuetify.theme.dark = true
